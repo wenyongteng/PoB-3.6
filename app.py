@@ -2360,8 +2360,10 @@ def main():
     print("   密码: DBAccess2026!")
     print("按 Ctrl+C 退出\n")
     
-    # 启动服务器 - 绑定到 localhost，由 nginx 反向代理
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # 启动服务器 - 使用 PORT 环境变量（Zeabur 等平台会注入），默认 8080
+    server_port = int(os.environ.get("PORT", 8080))
+    print(f"🚀 Listening on 0.0.0.0:{server_port}")
+    uvicorn.run(app, host="0.0.0.0", port=server_port)
 
 if __name__ == "__main__":
     main()

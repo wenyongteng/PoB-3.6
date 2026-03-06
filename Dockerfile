@@ -26,6 +26,6 @@ COPY data/ ./data/
 # 初始化空记忆
 RUN touch consciousness.txt
 
-EXPOSE 8000
+EXPOSE 8080
 
-CMD ["python3", "app.py", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python3", "app.py"]
