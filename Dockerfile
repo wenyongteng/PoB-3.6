@@ -20,7 +20,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 复制核心代码
 COPY app.py app.py
 COPY compress_memory.py .
-COPY vision/ ./vision/
+COPY public_tools/ ./public_tools/
+COPY data/ ./data/
 
 # 初始化空记忆
 RUN touch consciousness.txt
